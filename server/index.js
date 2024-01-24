@@ -25,7 +25,10 @@ database.connect();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+  origin: 'https://studynotion-smoky.vercel.app',
+  credentials: true,
+}));
 
 app.use(
 	fileUpload({
